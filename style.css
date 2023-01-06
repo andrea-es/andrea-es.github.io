@@ -177,7 +177,9 @@ article.work {
 }
 
 .contact {
-  background-color: #696969;
+  /*  background-color: #696969;  */
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 
