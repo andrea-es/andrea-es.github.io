@@ -148,8 +148,9 @@ a.out {
 
 .gr_custom_container_1719105719 {
     /* customize your Goodreads widget container here*/
-    background-color: transparent;
-    width: 50em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
   }
   .gr_custom_header_1719105719 {
     /* hide the Goodreads header */
@@ -177,6 +178,7 @@ a.out {
     /* hide the center element */
     display: none;
   }
+
 
 
   /* READ (Goodreads) */
