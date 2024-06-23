@@ -119,6 +119,7 @@ a.out {
 
 
 /* LIBRARY */
+/* REVIEWED */
 .bookshelf {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -143,6 +144,43 @@ a.out {
     font-size: 0.9em;
     color: gray;
 }
+
+/* CURRENTLY READING (Goodreads) */
+
+.gr_custom_container_1719105719 {
+    /* customize your Goodreads widget container here*/
+    background-color: transparent;
+    width: 50em;
+  }
+  .gr_custom_header_1719105719 {
+    /* hide the Goodreads header */
+    display: none;
+  }
+  .gr_custom_each_container_1719105719 {
+    /* customize each individual book container here */
+    width: 100%;
+    clear: both;
+    margin-bottom: 0px;
+    overflow: auto;
+  }
+  .gr_custom_book_container_1719105719 {
+    /* customize your book covers here */
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    }
+  .gr_custom_author_1719105719 {
+    /* customize your author names here */
+    font-size: 0.9em;
+    color: gray;
+  }
+  center {
+    /* hide the center element */
+    display: none;
+  }
+
+
+  /* READ (Goodreads) */
 
 .gr_grid_container {
     max-width: 60em;
