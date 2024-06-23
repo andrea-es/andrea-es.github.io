@@ -13,14 +13,13 @@ body {
     text-align: center;
 }
 #head img {
-    width: 100%; /* Adjust the percentage to your preference */
-    max-width: 52em;
-    min-width: 27em;
-    max-width: 100%; /* Ensure the image doesn't exceed its original size */
-    height: auto; /* Maintain the aspect ratio */
-    vertical-align: middle;
-    padding: 0 15px 0 0;
-    border: 0;
+    display: block;          /* Makes the element a block-level element, occupying the full width and starting on a new line */
+    object-fit: cover;       /* Ensures the content (like an image) covers the entire element area while maintaining its aspect ratio */
+    border-radius: 0px;      /* Sets the corners of the element to be square (no rounding) */
+    width: 100%;             /* Sets the element's width to 100% of its containing element's width */
+    height: 30vh;            /* Sets the element's height to 30% of the viewport height */
+    opacity: 1;              /* Makes the element fully opaque */
+    object-position: center 70.26%;  /* Positions the content within the element, centering it horizontally and aligning it at 70.26% height from the top */
 }
 #head h1 {
     color: #fff;
