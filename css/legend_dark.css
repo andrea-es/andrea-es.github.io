@@ -1,12 +1,38 @@
-body {
+/* 
+
+TO DO
+
+For mobile compatibility:
+- Remove fixed minimum width
+- Adjust scaling of text and images
+- Check where dimensions make more sense relative to character size (em/rem) or screen size (vh/vw)
+
+For general good practice:
+- Eliminate section-specific commands where possible.
+- Refer to the general conditions in body or content
+
+*/
+
+
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  } /* States adaptability to screen size explicitly */
+
+body { /* Defines the default attributes of all the content */
     color: #fff;
-    font-family: helvetica, sans-serif;
-    font-size: 100%;
+    font-family: helvetica, sans-serif;    
+    font-size: 1rem; /* Equal to the size of the root element */
     line-height: 1.25;
     background-color: #1d1d1d;
     margin: 0;
     padding: 0;
 }
+    @media (max-width: 600px) {
+        body {
+            font-size: 120%; /* Adjusting the font size for smaller screens */
+        }
+    }
 
 /* HEADER */
 #head {
@@ -21,21 +47,22 @@ body {
     opacity: 1;              /* Makes the element fully opaque */
     object-position: center 70.26%;  /* Positions the content within the element, centering it horizontally and aligning it at 70.26% height from the top */
 }
-#head h1 {
+#head h1 { /* Header 1 */
     color: #fff;
     font-family: georgia, 'bitstream vera serif', serif;
-    font-size: 3.5em;
+    font-size: 3.5em; /* 3.5 times the size of the body font size */
     font-weight: normal;
     letter-spacing: -1px;
     line-height: 1;
     margin: 0;
     padding: 20px 0 8px 0;
 }
+
 #head h1 a, #head h1 a:link, #head h1 a:visited, #head h1 a:hover {
     color: #fff;
     text-decoration: none;
 }
-#head ul {
+#head ul { /* Unordered list */
     font-size: 1.1em;
     font-family: "lucida console", "monaco", "andale mono", "bitstream vera sans mono", "consolas", monospace;
     font-weight: normal;
@@ -45,12 +72,12 @@ body {
     margin: 0;
     padding: 0 40px 0.25em 40px;
 }
-#head ul li {
+#head ul li { /* List items in the unordered list */
     display: inline;
     list-style-type: none;
     padding: 0 0.5em 0 0;
 }
-#head ul a, #head ul a:link, #head ul a:visited {
+#head ul a, #head ul a:link, #head ul a:visited { /* Anchor (link) elements */
     color: #fff;
     text-decoration: none;
 }
@@ -63,7 +90,7 @@ body {
 #content {
     color: #eee;
     max-width: 52em;
-    min-width: 27em;
+    /*min-width: 27em; /* Seems like removing it is fine */
     margin: 7px auto;
     border-top: 2px solid #555;
     padding-top: 10px;
@@ -116,36 +143,17 @@ a.out {
     padding-right: 12px;
 }
 
-
-/* LIBRARY */
-/* REVIEWED */
-.bookshelf {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
+/* ABOUT PAGE */
+body#about ul li {
+    margin-bottom: 20px;
 }
-.book-container {
-    text-align: center;
-}
-.book-cover {
-    height: 250px;
-    width: auto;
-    cursor: pointer;
-    border-radius: 8px; /* rounded corners */
-    border: 2px solid white; /* White margin around the cover */
-    box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Optional: subtle shadow for better visualization */
-}
-.book-title {
-    font-size: 1.1em;
-    margin-top: 5px;
-}
-.book-author {
-    font-size: 0.9em;
-    color: gray;
+body#about #content strong, body#about #content a {
+    font-weight: bold;
 }
 
-/* CURRENTLY READING (Goodreads) */
+/* BOOKS PAGE */
 
+/* Currently reading */
 .gr_custom_container_1719105719 {
     /* customize your Goodreads widget container here*/
     display: grid;
@@ -179,10 +187,38 @@ a.out {
     display: none;
   }
 
+/* Reviewed books */
+.bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+@media (max-width: 600px) {
+    .bookshelf {
+        grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    }
+}
+.book-container {
+    text-align: center;
+}
+.book-cover {
+    height: 250px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 8px; /* rounded corners */
+    border: 2px solid white; /* White margin around the cover */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Optional: subtle shadow for better visualization */
+}
+.book-title {
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.book-author {
+    font-size: 0.9em;
+    color: gray;
+}
 
-
-  /* READ (Goodreads) */
-
+/* Read books (Goodreads) */
 .gr_grid_container {
     max-width: 60em;
     min-width: 27em;
@@ -204,186 +240,4 @@ a.out {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Crop the image to fit the container */
-}
-
-
-/* CODE */
-code, pre, textarea, tt {
-    font-family: "lucida console", "monaco", "andale mono", "bitstream vera sans mono", "consolas", monospace;
-}
-pre {
-    font-size: 0.85em;
-    background: #444;
-    border: 2px solid #555;
-    padding: 0.5em;
-    line-height: 1.15;
-    color: #eee;
-}
-code, tt {
-    font-size: 0.85em;
-    color: #ccc;
-}
-h1 code, h2 code, h3 code, h4 code {
-    color: #eee;
-}
-pre code {
-    font-size: 1em;
-    color: #ccc;
-}
-
-/* MISC */
-hr {
-    margin: 2em 0;
-    padding: 0;
-    color: #555;
-}
-
-/* HOME */
-body#home {
-    background: #333;
-}
-#home #content {
-    font-size: 1.05em;
-    margin: 20px 0 0 0;
-    padding: 0 20px;
-    border-width: 0;
-}
-#home #head, #home #foot {
-    display: none;
-}
-.pipe {
-    clear: both;
-    padding: 50px 0;
-}
-.pipe p {
-    color: #fff;
-    font-size: 62px;
-    font-family: 'georgia', 'bitstream vera serif', serif;
-    letter-spacing: -3px;
-    line-height: 1;
-    text-align: right;
-    margin: 0em 43% 0 0;
-    padding: 0 60px 0 0;
-}
-.pipe pre {
-    float: right;
-    background: transparent;
-    font-size: 28px;
-    margin: 0;
-    padding: 5px 0 0 0;
-    width: 42%;
-    border-width: 0;
-}
-.pipe pre code {
-    color: #666;
-    background: transparent;
-}
-.pipe.shell p {
-    font-size: 56px;
-}
-.pipe.shell pre {
-    font-size: 18px;
-}
-.pipe.nav p {
-    font-size: 100px;
-    letter-spacing: -6px;
-}
-.pipe.nav pre {
-    font-size: 36px;
-    padding-top: 20px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    line-height: 1.25;
-}
-.pipe.nav {
-    padding: 25px 0 50px 0;
-}
-.pipe.nav a, .pipe.nav a:link, .pipe.nav a:visited {
-    color: #444;
-    text-decoration: none;
-}
-.pipe.nav a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-/* README */
-.toc {
-    float: right;
-    background: #444;
-    border: 2px solid #555;
-    max-width: 20em;
-    padding: 0.5em;
-    line-height: 1.15;
-    color: #eee;
-    margin-left: 2em;
-    margin-bottom: -2.5em;
-    position: relative;
-    top: -3.5em;
-    font-size: 0.9em;
-}
-.toc a {
-    text-decoration: none;
-}
-.toc .level-1 {
-    padding-left: 2em;
-    font-size: 0.8em;
-    position: relative;
-    top: -0.1em;
-}
-.toc .level-2 {
-    list-style-type: none;
-    font-weight: normal;
-    padding-left: 1em;
-}
-.toc .level-1 > li {
-    margin: 0.05em;
-}
-.toc .level-1 > li a {
-    font-weight: bold;
-    font-size: 1.25em;
-    position: relative;
-    top: 0.1em;
-}
-.toc h2 {
-    padding-top: 0;
-    margin-top: 0;
-}
-pre {
-    overflow: hidden;
-}
-
-/* BLOG POSTS */
-div.post {
-    margin: 2em 0;
-}
-div.post h1 a {
-    text-decoration: none;
-}
-div.post h1 a:hover {
-    text-decoration: underline;
-}
-p.meta {
-    font-size: 0.8em;
-    color: #bbb;
-    margin-top: 0;
-}
-
-/* ABOUT PAGE */
-body#about ul li {
-    margin-bottom: 20px;
-}
-body#about #content strong, body#about #content a {
-    font-weight: bold;
-}
-
-/* THE BOOK */
-#book .maruku_toc {
-    margin: 1em 0;
-}
-#book .maruku_toc ul:first-child {
-    padding-left: 0;
-}
-#book pre {
-    overflow: auto;
 }
