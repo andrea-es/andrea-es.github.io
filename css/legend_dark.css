@@ -90,7 +90,7 @@ body { /* Defines the default attributes of all the content */
 #content {
     color: #eee;
     max-width: 52em;
-    /*min-width: 27em; /* Seems like removing it is fine */
+    /* Removed min-width */
     margin: 7px auto;
     border-top: 2px solid #555;
     padding-top: 10px;
@@ -202,8 +202,8 @@ body#about #content strong, body#about #content a {
     text-align: center;
 }
 .book-cover {
-    height: 250px;
-    width: auto;
+    height: auto;
+    width: 100%;
     cursor: pointer;
     border-radius: 8px; /* rounded corners */
     border: 2px solid white; /* White margin around the cover */
@@ -221,7 +221,7 @@ body#about #content strong, body#about #content a {
 /* Read books (Goodreads) */
 .gr_grid_container {
     max-width: 60em;
-    min-width: 27em;
+    /* Removed min-width */
     display: flex;
     flex-wrap: wrap;
     justify-content: left; /* Center the items horizontally */
