@@ -230,8 +230,9 @@ body#about #content strong, body#about #content a {
 
 .gr_grid_book_container {
     /* customize book cover container div here */
-    width: 98px;
-    height: 160px;
+    flex-shrink: 1;
+    flex-grow:1;
+    max-width: 120px; /* not the best solution but its fine for now*/
     padding: 0px; /* Remove padding */
     overflow: hidden;
 }
