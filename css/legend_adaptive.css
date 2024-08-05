@@ -33,7 +33,7 @@ For general good practice:
 }
 
 /* Light theme (default)*/
-    {
+@media (prefers-color-scheme: light) {
     body {
         color: #000;
         background-color: #fff;
