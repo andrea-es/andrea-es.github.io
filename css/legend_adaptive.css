@@ -19,20 +19,93 @@ For general good practice:
     zoom: 1.0 ;
   } /* States adaptability to screen size explicitly */
 
-body { /* Defines the default attributes of all the content */
-    color: #fff;
+  body { 
     font-family: helvetica, sans-serif;    
     font-size: 1rem; /* Equal to the size of the root element */
     line-height: 1.25;
-    background-color: #1d1d1d;
     margin: 0;
     padding: 0;
 }
-    @media (max-width: 600px) {
-        body {
-            font-size: 120%; /* Adjusting the font size for smaller screens */
-        }
+@media (max-width: 600px) {
+    body {
+        font-size: 120%; /* Adjusting the font size for smaller screens */
     }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+    #head h1 {
+        color: #000;
+    }
+    #head h1 a, #head h1 a:link, #head h1 a:visited, #head h1 a:hover {
+        color: #100;
+    }
+    #head ul a, #head ul a:link, #head ul a:visited {
+        color: #56534f;
+    }
+    #head ul a:hover {
+        color: #000;
+    }
+    #content {
+        color: #111;
+        border-top: 2px solid #837d7c;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #000;
+    }
+    h1 a, h2 a, h3 a {
+        color: #000;
+    }
+    h3 code {
+        color: #000;
+    }
+    a {
+        color: #000;
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #fff;
+        background-color: #1d1d1d;
+    }
+    #head h1 {
+        color: #fff;
+    }
+    #head h1 a, #head h1 a:link, #head h1 a:visited, #head h1 a:hover {
+        color: #fff;
+    }
+    #head ul a, #head ul a:link, #head ul a:visited {
+        color: #fff;
+    }
+    #head ul a:hover {
+        color: #fff;
+    }
+    #content {
+        color: #eee;
+        border-top: 2px solid #555;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+    h1 a, h2 a, h3 a {
+        color: #fff;
+    }
+    h3 code {
+        color: #fff;
+    }
+    a {
+        color: #fff;
+    }
+    a:hover {
+        color: #3E709E;
+    }
+}
 
 /* HEADER */
 #head {
@@ -48,7 +121,6 @@ body { /* Defines the default attributes of all the content */
     object-position: center 70.26%;  /* Positions the content within the element, centering it horizontally and aligning it at 70.26% height from the top */
 }
 #head h1 { /* Header 1 */
-    color: #fff;
     font-family: georgia, 'bitstream vera serif', serif;
     font-size: 3.5em; /* 3.5 times the size of the body font size */
     font-weight: normal;
@@ -59,7 +131,6 @@ body { /* Defines the default attributes of all the content */
 }
 
 #head h1 a, #head h1 a:link, #head h1 a:visited, #head h1 a:hover {
-    color: #fff;
     text-decoration: none;
 }
 #head ul { /* Unordered list */
@@ -78,21 +149,17 @@ body { /* Defines the default attributes of all the content */
     padding: 0 0.5em 0 0;
 }
 #head ul a, #head ul a:link, #head ul a:visited { /* Anchor (link) elements */
-    color: #fff;
     text-decoration: none;
 }
 #head ul a:hover {
-    color: #fff;
     text-decoration: underline;
 }
 
 /* CONTENT */
 #content {
-    color: #eee;
     max-width: 52em;
     /* Removed min-width */
     margin: 7px auto;
-    border-top: 2px solid #555;
     padding-top: 10px;
     padding-left: 15px; /* Add padding to the left */
     padding-right: 15px; /* Add padding to the right */
@@ -100,12 +167,6 @@ body { /* Defines the default attributes of all the content */
 }
 
 /* HEADINGS */
-h1, h2, h3, h4, h5, h6 {
-    color: #fff;
-}
-h1 a, h2 a, h3 a {
-    color: #fff;
-}
 h1 {
     font-size: 2em;
     letter-spacing: -1px;
@@ -123,12 +184,10 @@ h3 {
 }
 h3 code {
     font-size: 1.1em;
-    color: #fff;
 }
 
 /* LINKS */
 a {
-    color: #fff;
     text-decoration: underline;
 }
 a:hover {
