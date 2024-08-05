@@ -32,8 +32,8 @@ For general good practice:
     }
 }
 
-/* Light theme */
-@media (prefers-color-scheme: light) {
+/* Light theme (default)*/
+    {
     body {
         color: #000;
         background-color: #fff;
