@@ -13,6 +13,7 @@ For general good practice:
 
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 @viewport {
     width: device-width ;
@@ -20,7 +21,7 @@ For general good practice:
   } /* States adaptability to screen size explicitly */
 
   body { 
-    font-family: helvetica, sans-serif;    
+    font-family: "Inter", "Helvetica Neue", helvetica, sans-serif;    
     font-size: 1rem; /* Equal to the size of the root element */
     line-height: 1.25;
     margin: 0;
